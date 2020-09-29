@@ -1,0 +1,94 @@
+.body{
+    margin: 0px !important;
+    
+}
+
+.row{
+   margin: 0px!important;
+}
+
+.vh-100{
+    min-height: 100vh;
+}
+
+.left{
+    padding: 0px !important;
+    background-color: #A4D792;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+.right{
+    padding: 0px !important;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+
+.centerdata{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.greeting{
+    border-right: none !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    padding: 30px ;
+    height: 500px;
+    width: 500px;
+    background-color: #A4D792 !important;
+}
+.logincard{
+    border-left: none !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    padding: 30px ;
+    height: 500px;
+    width: 500px;
+}
+
+.logo{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.headingsize{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+.smallheading{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.normalsize{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.smalllogo{
+    display: none;
+}
+
+.bttn{
+    margin: 20px 0px;
+    padding: 10px 30px !important;
+}
+@media(max-width:767px){
+    .logincard{
+        height: 100% !important;
+        width: 100% !important;
+        border: none !important;
+    }
+    .smalllogo{
+        display: block;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 3px solid #69bd32;
+        margin-bottom: 30px;
+    }
+}
+
