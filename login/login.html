@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../global.css">
+    <title>Grocer</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../Images/logo/favicon.png" />
@@ -21,36 +23,27 @@
         </div>
         <div class="col-md-6 col-sm-12 right">
             <div class="row vh-100">
-                <div class="my-auto card logincard" id="login">
+                <div class="my-auto card logincard">
                     <img src="../Images/logo/logo.png" class="smalllogo centerdata" />
                     <p class="centerdata smallheading">Login</p>
                     <form>
                         <p class="normalsize">User name</p>
-                        <input class="form-control" type="text" id="logusername" placeholder="enter your username">
+                        <input class="form-control" type="text" id="username" placeholder="enter your username">
                         <p class="normalsize">Password</p>
-                        <input class="form-control" type="password" id="logpassword" placeholder="enter your password">
-                        <button class="btn bttn">Login</button>
+                        <input class="form-control" type="password" id="password" placeholder="enter your password"> 
+                        <div id="registerdiv">
+                            <p class="normalsize">Confirm Password</p>
+                            <input class="form-control" type="password" id="cpassword" placeholder="enter your password"> 
+                        </div>     
                     </form>
+                    <button class="btn bttn" onclick="loginClick()" id="loginbtn" >Login</button>
+                    <button class="btn bttn" id="registerbtn" onclick="registerClick()">Register</button>
                     <div class="row">
-                        <a class="ml-auto cursor" onclick="register_display()">NewUser Register</a>
+                        <a class="ml-auto cursor" onclick="register_display()" id="login" >NewUser Register</a>
+                        <a class="ml-auto cursor"  id="register" onclick="login_display()">Already registered Login</a>
                     </div>
                 </div>
-                <div class="my-auto card logincard" id="register">
-                    <img src="../Images/logo/logo.png" class="smalllogo centerdata" />
-                    <p class="centerdata smallheading">Registration</p>
-                    <form>
-                        <p class="normalsize">User name</p>
-                        <input class="form-control" type="text" id="resusername" placeholder="enter your username">
-                        <p class="normalsize">Password</p>
-                        <input class="form-control" type="password" id="respassword" placeholder="enter your password">
-                        <p class="normalsize">Confirm Password</p>
-                        <input class="form-control" type="password" id="cpassword" placeholder="enter your password">
-                        <button class="btn bttn">Register</button>
-                    </form>
-                    <div class="row">
-                        <a class="ml-auto cursor"  onclick="login_display()">Already registered Login</a>
-                    </div>
-                </div>
+             
             </div>
         </div>
     </div>
@@ -66,7 +59,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-        <script type="text/javascript" src="login.ts"></script>
+        <script type="text/javascript" src="login.js"></script>
 </body>
 
 </html>
