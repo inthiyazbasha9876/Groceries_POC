@@ -21,18 +21,34 @@
         </div>
         <div class="col-md-6 col-sm-12 right">
             <div class="row vh-100">
-                <div class="my-auto card logincard">
+                <div class="my-auto card logincard" id="login">
                     <img src="../Images/logo/logo.png" class="smalllogo centerdata" />
                     <p class="centerdata smallheading">Login</p>
                     <form>
                         <p class="normalsize">User name</p>
-                        <input class="form-control" type="text" placeholder="enter your username">
+                        <input class="form-control" type="text" id="logusername" placeholder="enter your username">
                         <p class="normalsize">Password</p>
-                        <input class="form-control" type="password" placeholder="enter your password">
+                        <input class="form-control" type="password" id="logpassword" placeholder="enter your password">
                         <button class="btn bttn">Login</button>
                     </form>
                     <div class="row">
-                        <a href="../register/registration.html" class="ml-auto">NewUser Register</a>
+                        <a class="ml-auto cursor" onclick="register_display()">NewUser Register</a>
+                    </div>
+                </div>
+                <div class="my-auto card logincard" id="register">
+                    <img src="../Images/logo/logo.png" class="smalllogo centerdata" />
+                    <p class="centerdata smallheading">Registration</p>
+                    <form>
+                        <p class="normalsize">User name</p>
+                        <input class="form-control" type="text" id="resusername" placeholder="enter your username">
+                        <p class="normalsize">Password</p>
+                        <input class="form-control" type="password" id="respassword" placeholder="enter your password">
+                        <p class="normalsize">Confirm Password</p>
+                        <input class="form-control" type="password" id="cpassword" placeholder="enter your password">
+                        <button class="btn bttn">Register</button>
+                    </form>
+                    <div class="row">
+                        <a class="ml-auto cursor"  onclick="login_display()">Already registered Login</a>
                     </div>
                 </div>
             </div>
@@ -49,6 +65,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="login.ts"></script>
 </body>
 
 </html>

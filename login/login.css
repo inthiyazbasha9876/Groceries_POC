@@ -1,88 +1,112 @@
-.body{
+.body {
     margin: 0px !important;
-    
 }
 
-.row{
-   margin: 0px!important;
+.row {
+    margin: 0px !important;
 }
 
-.vh-100{
+.vh-100 {
     min-height: 100vh;
 }
 
-.left{
+.left {
     padding: 0px !important;
-    background-color: #A4D792;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    background-color: #a4d792;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif !important;
 }
-.right{
+.right {
     padding: 0px !important;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif !important;
 }
 
-.centerdata{
+.centerdata {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.greeting{
+.greeting {
     border-right: none !important;
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
-    padding: 30px ;
+    padding: 30px;
     height: 500px;
     width: 500px;
-    background-color: #A4D792 !important;
+    background-color: #a4d792 !important;
 }
-.logincard{
+.logincard {
     border-left: none !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
-    padding: 30px ;
+    padding: 30px;
     height: 500px;
     width: 500px;
 }
 
-.logo{
+.logo {
     height: 150px;
     width: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
 }
 
-.headingsize{
+.headingsize {
     font-size: 30px;
     font-weight: bolder;
     margin-bottom: 5px;
 }
 
-.smallheading{
+.smallheading {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.normalsize{
+.normalsize {
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.smalllogo{
+.smalllogo {
     display: none;
 }
 
-.bttn{
+.bttn {
+   
+}
+
+.bttn {
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background: linear-gradient(to right, #FF652F  50%, #333333 50%);
+    background-size: 200% 100% !important;
+    background-position: right bottom;
+    transition: all .4s ease-out !important;
+    font-weight: bold !important;
+    color: white;
     margin: 20px 0px;
     padding: 10px 30px !important;
+  }
+  
+  .bttn:hover {
+    background-position: left bottom !important;
+  }
+
+
+.hide {
+    display: none !important;
 }
-@media(max-width:767px){
-    .logincard{
+.cursor {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .logincard {
         height: 100% !important;
         width: 100% !important;
         border: none !important;
     }
-    .smalllogo{
+    .smalllogo {
         display: block;
         height: 100px;
         width: 100px;
@@ -91,4 +115,3 @@
         margin-bottom: 30px;
     }
 }
-
