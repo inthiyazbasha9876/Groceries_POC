@@ -45,7 +45,7 @@
 .bttn {
     margin: 20px 0px;
     padding: 10px 30px !important;
-    background-color: #333333;
+    background-color: #333333 !important;
     color:white
 }
 

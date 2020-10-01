@@ -2,71 +2,111 @@
   "fruits" : [
     {
       "name" : "Apple",
-      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
-      "price" : 35
+      "image" : "../Images/apples.jpg",
+      "price" : 35,
+      "havetopay" : 35,
+      "id":"F1",
+      "quantity":1
     },
     {
       "name" : "Banana",
-      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/320px-Bananas_white_background_DS.jpg",
-      "price" : 12
+      "image" : "../Images/banana.jpg",
+      "price" : 12,
+      "havetopay" : 12,
+      "id":"F2",
+      "quantity":1
     },
     {
       "name" : "Grapes",
-      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Table_grapes_on_white.jpg/320px-Table_grapes_on_white.jpg",
-      "weight": 0.1,
-      "price" : 45
+      "image" : "../Images/grapes.jpg",
+      "price" : 45,
+      "havetopay" : 45,
+      "id":"F3",
+      "quantity":1
     },
     {
       "name" : "Pineapple",
-      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/286px-Pineapple_and_cross_section.jpg",
-      "price" : 200
+      "image" : "../Images/pineapple.jpg",
+      "price" : 200,
+      "havetopay":200,
+      "id":"F4",
+      "quantity":1
     }
   ],
   "veggie" : [
     {
-      "name" : "tomato",
-      "image" : "Groceries_POC/Images/tomatoes.jpg",
-      "price" : 70
+      "name" : "Tomato",
+      "image" : "../Images/tomatoes.jpg",
+      "price" : 70,
+      "havetopay" : 70,
+      "id":"V1",
+      "quantity":1
     },
     {
-      "name" : "capsiccum",
-      "image" : "Groceries_POC/Images/capisicum.jpg",
-      "price" : 100
+      "name" : "Capsiccum",
+      "image" : "../Images/capisicum.jpg",
+      "price" : 100,
+      "havetopay" : 100,
+      "id":"V2",
+      "quantity":1
     },
     {
-      "name" : "onion",
-      "image" : "Groceries_POC/Images/onions.jpg",
-      "price" : 85
+      "name" : "Onion",
+      "image" : "../Images/onions.jpg",
+      "price" : 85,
+      "havetopay" : 85,
+      "id":"V3",
+      "quantity":1
     },
     {
-      "name" : "califlower",
-      "image" : "Groceries_POC/Images/banana.jpg",
-      "price" : 20
+      "name" : "Califlower",
+      "image" : "../Images/califlower.jpg",
+      "price" : 20,
+      "havetopay" : 20,
+      "id":"V4",
+      "quantity":1
     },
     {
-      "name" : "carrot",
-      "image" : "Groceries_POC/Images/carrots.jpg",
-      "price" : 50
-    },
+      "name" : "Carrot",
+      "image" : "../Images/carrots.jpg",
+      "price" : 50,
+      "havetopay" : 50,
+      "id":"V5",
+      "quantity":1
+    }
+  ],
+  "meat":[
     {
       "name" : "Chicken",
-      "image" : "Groceries_POC/Images/meat.jpg",
-      "price" : 50
+      "image" : "../Images/meat.jpg",
+      "price" : 230,
+      "havetopay" : 50,
+      "id":"M1",
+      "quantity":1
     },
     {
       "name" : "Fish",
-      "image" : "Groceries_POC/Images/fish.jpg",
-      "price" : 50
+      "image" : "../Images/fish.jpg",
+      "price" : 300,
+      "havetopay" : 50,
+      "id":"M2",
+      "quantity":1
     },
     {
       "name" : "Prawns",
-      "image" : "Groceries_POC/Images/prawns.jpg",
-      "price" : 50
+      "image" : "../Images/prawns.jpg",
+      "price" : 250,
+      "havetopay" : 50,
+      "id":"M3",
+      "quantity":1
     },
     {
       "name" : "Mutton",
-      "image" : "Groceries_POC/Images/meat.jpg",
-      "price" : 50
+      "image" : "../Images/meat.jpg",
+      "price" : 500,
+      "havetopay" : 50,
+      "id":"M4",
+      "quantity":1
     }
   ]
   

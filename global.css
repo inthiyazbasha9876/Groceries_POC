@@ -1,5 +1,6 @@
 .body {
     margin: 0px !important;
+    scroll-behavior: smooth !important;
 }
 
 .row {
@@ -8,6 +9,15 @@
 
 .vh-100 {
     min-height: 100vh;
+}
+
+.cbtn{
+    background-color: #333333 !important;
+    color:white
+}
+
+.btn-sm{
+    margin: 5px !important;
 }
 
 .headingsize {
@@ -50,7 +60,8 @@ p{
     width: 200px;
     border-radius: 10px;
     opacity: 0.9;
-    background-color: #a4d792;
+    background-color: #333333;
+    color:white
 }
 
 .w3-animate-right{
@@ -59,4 +70,23 @@ p{
 
 .opcty{
     opacity: 0;
+}
+
+a{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+
+.smalllogo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0px 10px !important;
+}
+
+
+.tbtn{
+    
+    background: transparent !important;
 }
