@@ -1,0 +1,53 @@
+.textdesign {
+    color: black !important;
+    font-weight: bolder;
+}
+.nav-item {
+    margin: 0px 20px !important;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: static !important;
+}
+
+.dropdown-menu {
+    margin-top: 0px !important;
+    width: 100% !important;
+}
+
+
+.myinfo {
+    background-color: #88e267;
+}
+
+.dropheads{
+    background-color: #88e267;
+    padding: 15px !important;
+    text-align: center;
+}
+
+.image{
+    height: 300px !important;
+}
+
+@media (max-width: 767px) {
+    .container{
+        padding: 0px !important;
+    }
+    .nav-item {
+        margin: 0px !important;
+    }
+}
+
+@media(min-width:767px){
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown > .dropdown-toggle:active {
+        pointer-events: none;
+    }
+    
+}
