@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../Images/logo/favicon.png" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -25,19 +26,22 @@
             <div class="row vh-100">
                 <div class="my-auto card logincard">
                     <img src="../Images/logo/logo.png" class="smalllogo centerdata" />
-                    <p class="centerdata smallheading">Login</p>
+                    <p class="centerdata smallheading" id="label"></p>
                     <form>
                         <p class="normalsize">User name</p>
-                        <input class="form-control" type="text" id="username" placeholder="enter your username">
+                        <input class="form-control" type="text" id="username"  onkeypress="change()" placeholder="enter your username">
                         <p class="normalsize">Password</p>
-                        <input class="form-control" type="password" id="password" placeholder="enter your password"> 
+                        <input class="form-control" type="password" id="password" onkeypress="change()" placeholder="enter your password"> 
                         <div id="registerdiv">
                             <p class="normalsize">Confirm Password</p>
-                            <input class="form-control" type="password" id="cpassword" placeholder="enter your password"> 
+                            <input class="form-control" type="password" id="cpassword" onkeypress="change()" placeholder="enter your password"> 
+                            <p id="errorMsg" class="error"></p>
                         </div>     
                     </form>
                     <button class="btn bttn" onclick="loginClick()" id="loginbtn" >Login</button>
                     <button class="btn bttn" id="registerbtn" onclick="registerClick()">Register</button>
+
+                    
                     <div class="row">
                         <a class="ml-auto cursor" onclick="register_display()" id="login" >NewUser Register</a>
                         <a class="ml-auto cursor"  id="register" onclick="login_display()">Already registered Login</a>
@@ -47,7 +51,7 @@
             </div>
         </div>
     </div>
-
+ 
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

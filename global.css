@@ -18,7 +18,7 @@
 }
 
 p{
-    padding-bottom: 8px !important;
+    margin-bottom: 5px !important;
 }
 
 .smallheading {
@@ -32,4 +32,31 @@ p{
     font-size: 18px;
     margin-bottom: 5px;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif !important;
+}
+
+.error{
+    color:red;
+    font-size: 18px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif !important;
+}
+
+.msg{
+    padding:10px;
+    position: fixed;
+    top:0px;
+    right: 0px;
+    margin: 10px;
+    border: 1px solid black;
+    width: 200px;
+    border-radius: 10px;
+    opacity: 0.9;
+    background-color: #a4d792;
+}
+
+.w3-animate-right{
+    position: absolute !important;
+}
+
+.opcty{
+    opacity: 0;
 }

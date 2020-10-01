@@ -12,11 +12,14 @@
     position: static !important;
 }
 
-.dropdown-menu {
+.dropdown-menu1 {
     margin-top: 0px !important;
     width: 100% !important;
 }
 
+.bttn{
+    background: transparent !important;
+}
 
 .myinfo {
     background-color: #88e267;
@@ -50,4 +53,18 @@
         pointer-events: none;
     }
     
+}
+
+.footer{
+    background-color: black;
+    opacity: 0.8;
+    color:white;
+    padding:5px;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 15px;
 }
