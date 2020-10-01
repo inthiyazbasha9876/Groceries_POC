@@ -25,23 +25,48 @@
   "veggie" : [
     {
       "name" : "tomato",
-      "image" : "Images/rodion-kutsaev-EPwuZxdketc-unsplash.jpg",
+      "image" : "Groceries_POC/Images/tomatoes.jpg",
       "price" : 70
     },
     {
       "name" : "capsiccum",
-      "image" : "Images/midmidma-Abef-cCJMiU-unsplash.jpg",
+      "image" : "Groceries_POC/Images/capisicum.jpg",
       "price" : 100
     },
     {
       "name" : "onion",
-      "image" : "Images/lars-blankers-pmS8XSz5NU0-unsplash.jpg",
+      "image" : "Groceries_POC/Images/onions.jpg",
       "price" : 85
     },
     {
       "name" : "califlower",
-      "image" : "Images/jennifer-schmidt-0XVrBLy73rw-unsplash.jpg",
+      "image" : "Groceries_POC/Images/banana.jpg",
       "price" : 20
+    },
+    {
+      "name" : "carrot",
+      "image" : "Groceries_POC/Images/carrots.jpg",
+      "price" : 50
+    },
+    {
+      "name" : "Chicken",
+      "image" : "Groceries_POC/Images/meat.jpg",
+      "price" : 50
+    },
+    {
+      "name" : "Fish",
+      "image" : "Groceries_POC/Images/fish.jpg",
+      "price" : 50
+    },
+    {
+      "name" : "Prawns",
+      "image" : "Groceries_POC/Images/prawns.jpg",
+      "price" : 50
+    },
+    {
+      "name" : "Mutton",
+      "image" : "Groceries_POC/Images/meat.jpg",
+      "price" : 50
     }
   ]
   
