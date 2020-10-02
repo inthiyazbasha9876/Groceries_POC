@@ -5,7 +5,7 @@
       "image" : "../Images/apples.jpg",
       "price" : 35,
       "havetopay" : 35,
-      "id":"F1",
+      "itemid":"F1",
       "quantity":1
     },
     {
@@ -13,7 +13,7 @@
       "image" : "../Images/banana.jpg",
       "price" : 12,
       "havetopay" : 12,
-      "id":"F2",
+      "itemid":"F2",
       "quantity":1
     },
     {
@@ -21,7 +21,7 @@
       "image" : "../Images/grapes.jpg",
       "price" : 45,
       "havetopay" : 45,
-      "id":"F3",
+      "itemid":"F3",
       "quantity":1
     },
     {
@@ -29,7 +29,7 @@
       "image" : "../Images/pineapple.jpg",
       "price" : 200,
       "havetopay":200,
-      "id":"F4",
+      "itemid":"F4",
       "quantity":1
     }
   ],
@@ -39,7 +39,7 @@
       "image" : "../Images/tomatoes.jpg",
       "price" : 70,
       "havetopay" : 70,
-      "id":"V1",
+      "itemid":"V1",
       "quantity":1
     },
     {
@@ -47,7 +47,7 @@
       "image" : "../Images/capisicum.jpg",
       "price" : 100,
       "havetopay" : 100,
-      "id":"V2",
+      "itemid":"V2",
       "quantity":1
     },
     {
@@ -55,7 +55,7 @@
       "image" : "../Images/onions.jpg",
       "price" : 85,
       "havetopay" : 85,
-      "id":"V3",
+      "itemid":"V3",
       "quantity":1
     },
     {
@@ -63,7 +63,7 @@
       "image" : "../Images/califlower.jpg",
       "price" : 20,
       "havetopay" : 20,
-      "id":"V4",
+      "itemid":"V4",
       "quantity":1
     },
     {
@@ -71,7 +71,7 @@
       "image" : "../Images/carrots.jpg",
       "price" : 50,
       "havetopay" : 50,
-      "id":"V5",
+      "itemid":"V5",
       "quantity":1
     }
   ],
@@ -81,7 +81,7 @@
       "image" : "../Images/meat.jpg",
       "price" : 230,
       "havetopay" : 50,
-      "id":"M1",
+      "itemid":"M1",
       "quantity":1
     },
     {
@@ -89,7 +89,7 @@
       "image" : "../Images/fish.jpg",
       "price" : 300,
       "havetopay" : 50,
-      "id":"M2",
+      "itemid":"M2",
       "quantity":1
     },
     {
@@ -97,7 +97,7 @@
       "image" : "../Images/prawns.jpg",
       "price" : 250,
       "havetopay" : 50,
-      "id":"M3",
+      "itemid":"M3",
       "quantity":1
     },
     {
@@ -105,7 +105,7 @@
       "image" : "../Images/meat.jpg",
       "price" : 500,
       "havetopay" : 50,
-      "id":"M4",
+      "itemid":"M4",
       "quantity":1
     }
   ]

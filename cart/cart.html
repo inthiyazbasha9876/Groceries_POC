@@ -14,37 +14,59 @@
 </head>
 
 <body>
- 
-    <div class="row myinfo">
-      <a href="../Home/home.html"><img class="smalllogo" src="../Images/logo/logo.png"></a>
-        <div class="ml-auto my-auto">
-          <i class="fa fa-shopping-cart mr-2"></i>
-          <button class="btn tbtn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-           <label id="name"></label>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" onclick="signout()">SignOut</a>
-          </div>
-        </div>
+
+  <div class="row myinfo">
+    <a href="../Home/home.html"><img class="smalllogo" src="../Images/logo/logo.png"></a>
+    <div class="ml-auto my-auto">
+      <i class="fa fa-shopping-cart mr-2"></i>
+      <button class="btn tbtn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <label id="name"></label>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" onclick="signout()">SignOut</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h1>Shopping Cart</h1>
+    <hr>
+    <div class="row mb-3 borderclass">
+      <div class="col-2">
+        <p>Item</p>
+      </div>
+      <div class="col-2">
+        <p>Quantity</p>
+      </div>
+      <div class="col-2">
+        <p>Unit Price</p>
+      </div>
+      <div class="col-2">
+        <p>Toatal Price</p>
+      </div>
+      <div class="col-2">
+        <p>Delete</p>
+      </div>
+    </div>
+    <div id="cartdetails">
+
+    </div>
+    <div class="row m-2">
+      <div class="col-2">
+        <p class="normalsize">Total</p>
+      </div>
+      <div class="offset-4 col-2">
+        <p class="mx-auto" id=totalprice></p>
       </div>
 
-      <div class="container">
-    
-        <h1>Shopping Cart</h1><hr>
-        <table class="table table-striped table-hover table-bordered">
-           <thead>
-             <th>Item</th>
-             <th>Qnty</th>
-             <th>Unit Price</th>
-             <th>Total Price</th>
-           </thead>
-           <tbody id="cartdetials">
-
-           </tbody>
-        </table>          
-          
     </div>
+    <div class="row">
+      <button class="btn cbtn">Continue Shopping</button>
+    </div>
+
+  </div>
 
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

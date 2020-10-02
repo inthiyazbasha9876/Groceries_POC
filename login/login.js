@@ -13,6 +13,7 @@ const errorMsg = document.getElementById('errorMsg')
 const label = document.getElementById('label')
 const url = "http://localhost:3000/userDetails"
 
+
 let userdata
 
 login_display()
@@ -49,6 +50,7 @@ function cleartextfileds() {
     fullname.value = ''
     mobile.value = ''
 }
+
 async function getAllusers() {
     await fetch(url)
         .then(res => {
@@ -73,7 +75,8 @@ function loginClick() {
                 console.log("login");
                 localStorage.setItem('name', i.fullname)
                 localStorage.setItem('id', i.id)
-                window.location.href = "../Home/home.html"
+                // window.location.href = "../Home/home.html"
+                window.location.replace('../Home/home.html');
             } else {
                 p.innerHTML = "User Name or password is wrong"
                 div.classList.add('msg', 'w3-right', 'w3-animate-right')
@@ -107,8 +110,8 @@ function registerClick() {
         'confirmPswd': cpassword.value,
     }
     if (newuser.password === newuser.confirmPswd) {
-        let found=userdata.filter(a=>a.username==newuser.username)
-        if(found.length>0){
+        let found = userdata.filter(a => a.username == newuser.username)
+        if (found.length > 0) {
             p.innerHTML = "User Name already taken"
             div.classList.add('msg', 'w3-right', 'w3-animate-right')
             div.appendChild(p)
@@ -116,12 +119,12 @@ function registerClick() {
             setTimeout(() => {
                 div.classList.add('opcty')
             }, 3000)
-        }else{
+        } else {
             postData(url, newuser).then(res => {
                 console.log(res);
-               
+
                 if (res.status == 404) {
-    
+
                     p.innerHTML = "404 - Not Found(URL Mistake)"
                     div.classList.add('msg', 'w3-right', 'w3-animate-right')
                     div.appendChild(p)
@@ -130,7 +133,7 @@ function registerClick() {
                         div.classList.add('opcty')
                     }, 3000)
                 } else if (res.status == 201) {
-                        console.log(res,"hello");
+                    console.log(res, "hello");
                     cleartextfileds()
                     p.innerHTML = "User Created"
                     div.classList.add('msg', 'w3-right', 'w3-animate-right')
@@ -139,13 +142,13 @@ function registerClick() {
                     setTimeout(() => {
                         div.classList.add('opcty')
                     }, 3000)
-    
+
                 }
             }).catch(error => {
                 console.log(error);
             })
         }
-       
+
     } else {
         errorMsg.innerHTML = "Password Miss match"
     }
@@ -154,14 +157,14 @@ function registerClick() {
 
 async function postData(url, data) {
     let res
-   await fetch(url, {
+    await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     }).then(response => {
-        res=response
+        res = response
         response.json().then(json => console.log(json))
     })
 

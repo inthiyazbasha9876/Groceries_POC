@@ -5,45 +5,40 @@
       "image": "../Images/apples.jpg",
       "price": 35,
       "havetopay": 35,
-      "id": "F1",
+      "itemid": "F1",
       "quantity": 1,
-      "userid": "2"
+      "userid": "2",
+      "id": 1
     },
     {
-      "name": "Banana",
-      "image": "../Images/banana.jpg",
-      "price": 12,
-      "havetopay": 12,
-      "id": "F2",
+      "name": "Tomato",
+      "image": "../Images/tomatoes.jpg",
+      "price": 70,
+      "havetopay": 70,
+      "itemid": "V1",
       "quantity": 1,
-      "userid": "2"
+      "userid": "1",
+      "id": 3
     },
     {
-      "name": "Pineapple",
-      "image": "../Images/pineapple.jpg",
-      "price": 200,
-      "havetopay": 200,
-      "id": "F4",
-      "quantity": 1,
-      "userid": "1"
+      "name": "Chicken",
+      "image": "../Images/meat.jpg",
+      "price": 230,
+      "havetopay": 510,
+      "itemid": "M1",
+      "quantity": 3,
+      "userid": "2",
+      "id": 4
     },
     {
-      "name": "Capsiccum",
-      "image": "../Images/capisicum.jpg",
-      "price": 100,
-      "havetopay": 100,
-      "id": "V2",
-      "quantity": 1,
-      "userid": "1"
-    },
-    {
-      "name": "Grapes",
-      "image": "../Images/grapes.jpg",
-      "price": 45,
-      "havetopay": 45,
-      "id": "F3",
-      "quantity": 1,
-      "userid": "2"
+      "name": "Prawns",
+      "image": "../Images/prawns.jpg",
+      "price": 250,
+      "havetopay": 300,
+      "itemid": "M3",
+      "quantity": 2,
+      "userid": "2",
+      "id": 5
     }
   ]
 }

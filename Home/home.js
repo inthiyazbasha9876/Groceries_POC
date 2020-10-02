@@ -11,7 +11,7 @@ const meatdiv = document.getElementById('meatdiv')
 const modalbody = document.getElementById('modalbody')
 const modalfooter = document.getElementById('modalfooter')
 const modal = document.getElementById('exampleModalCenter')
-const name = document.getElementById('name')
+const userName = document.getElementById('name')
 
 let removeableDiv = ''
 let removeablebtn = ''
@@ -19,10 +19,19 @@ let fruitsdata
 let vegdata
 let meatdata
 let uid
+
 setuser()
 getFruitsData()
 getVegData()
 getmeatData()
+clearhistory()
+
+function clearhistory() {
+    window.history.pushState(null, "", window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, "", window.location.href);
+    };
+}
 
 async function getFruitsData() {
     await fetch(fruitsurl)
@@ -251,7 +260,6 @@ function getdetails(e) {
             let div = document.createElement('div')
             let p = document.createElement('p')
             if (res.status == 201) {
-
                 p.innerHTML = "Item added to cart"
                 div.classList.add('msg', 'w3-right', 'w3-animate-right')
                 div.appendChild(p)
@@ -312,11 +320,13 @@ function removedata(e, f) {
 
 
 function setuser() {
-    name.innerHTML = localStorage.getItem('name')
+    userName.innerHTML = localStorage.getItem('name')
     uid = localStorage.getItem('id')
 }
 
 function signout() {
     localStorage.removeItem('name')
+    localStorage.removeItem('id')
     window.location.href = "../login/login.html"
 }
+

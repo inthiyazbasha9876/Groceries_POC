@@ -2,3 +2,7 @@
     background-color: #333333 !important;
     color:white !important;
 }
+
+.borderclass{
+    border-bottom: 1px solid black;
+}
