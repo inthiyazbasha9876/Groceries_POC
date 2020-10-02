@@ -1,90 +1,173 @@
 const login = document.getElementById('login')
 const registerdiv = document.getElementById('registerdiv')
+const registerdiv1 = document.getElementById('registerdiv1')
 const registerbtn = document.getElementById('registerbtn')
 const register = document.getElementById('register')
 const loginbtn = document.getElementById('loginbtn')
+const fullname = document.getElementById('fullname')
+const mobile = document.getElementById('mobile')
 const username = document.getElementById('username')
 const password = document.getElementById('password')
 const cpassword = document.getElementById('cpassword')
-const errorMsg=document.getElementById('errorMsg')
-const label=document.getElementById('label')
+const errorMsg = document.getElementById('errorMsg')
+const label = document.getElementById('label')
+const url = "http://localhost:3000/userDetails"
+
+let userdata
 
 login_display()
+getAllusers()
+
 function register_display() {
-    label.innerHTML="Register New User"
+    getAllusers()
+    label.innerHTML = "Register New User"
     register.classList.remove('hide')
     registerbtn.classList.remove('hide')
     registerdiv.classList.remove('hide')
+    registerdiv1.classList.remove('hide')
     login.classList.add('hide')
     loginbtn.classList.add('hide')
+    cleartextfileds()
 }
 
 function login_display() {
-    label.innerHTML="Login"
+    getAllusers()
+    label.innerHTML = "Login"
     login.classList.remove('hide')
     loginbtn.classList.remove('hide')
     register.classList.add('hide')
     registerbtn.classList.add('hide')
     registerdiv.classList.add('hide')
+    registerdiv1.classList.add('hide')
+    cleartextfileds()
 }
 
+function cleartextfileds() {
+    username.value = ''
+    password.value = ''
+    cpassword.value = ''
+    fullname.value = ''
+    mobile.value = ''
+}
+async function getAllusers() {
+    await fetch(url)
+        .then(res => {
+            res.json().then(data => {
+                userdata = data
+            })
+        })
+        .catch(function (err) {
+            console.log('Fetch Error', err);
+        });
+}
 
 function loginClick() {
-    console.log("hello");
+    let uname = username.value
+    let passwrd = password.value
+    let div = document.createElement('div')
+    let p = document.createElement('p')
+
+    if (userdata.length != 0) {
+        for (let i of userdata) {
+            if (i.username == uname && i.password == passwrd) {
+                console.log("login");
+                localStorage.setItem('name', i.fullname)
+                localStorage.setItem('id', i.id)
+                window.location.href = "../Home/home.html"
+            } else {
+                p.innerHTML = "User Name or password is wrong"
+                div.classList.add('msg', 'w3-right', 'w3-animate-right')
+                div.appendChild(p)
+                document.body.appendChild(div)
+                setTimeout(() => {
+                    div.classList.add('opcty')
+                }, 3000)
+            }
+        }
+    } else {
+        p.innerHTML = "Your are not Authorized user"
+        div.classList.add('msg', 'w3-right', 'w3-animate-right')
+        div.appendChild(p)
+        document.body.appendChild(div)
+        setTimeout(() => {
+            div.classList.add('opcty')
+        }, 3000)
+    }
+
 }
 
 function registerClick() {
-    
+    let div = document.createElement('div')
+    let p = document.createElement('p')
     let newuser = {
+        'fullname': fullname.value,
+        'moblie': mobile.value,
         'username': username.value,
         'password': password.value,
-        'confirmPswd': cpassword.value
+        'confirmPswd': cpassword.value,
     }
-    console.log(newuser);
-    if(newuser.password === newuser.confirmPswd){
-        let url = "http://localhost:3000/userDetails"
-        postData(url, newuser).then(res=>{
-            console.log(res);
-            let div=document.createElement('div')
-            let p=document.createElement('p')
-            if(res.status==404){
-                
-                p.innerHTML="404 - Not Found(URL Mistake)"
-                div.classList.add('msg','w3-right','w3-animate-right')
-                div.appendChild(p)
-                document.body.appendChild(div)
-                setTimeout(()=>{
-                    div.classList.add('opcty')
-                },3000)
-            }else if(res.status==201){
-                p.innerHTML="User Created"
-                div.classList.add('msg','w3-right','w3-animate-right')
-                div.appendChild(p)
-                document.body.appendChild(div)
-                setTimeout(()=>{
-                    div.classList.add('opcty')
-                },3000)
-            }
-        }).catch(error=>{
-            console.log(error);
-        })
-    }else{
-        errorMsg.innerHTML="Password Miss match"
-    }
+    if (newuser.password === newuser.confirmPswd) {
+        let found=userdata.filter(a=>a.username==newuser.username)
+        if(found.length>0){
+            p.innerHTML = "User Name already taken"
+            div.classList.add('msg', 'w3-right', 'w3-animate-right')
+            div.appendChild(p)
+            document.body.appendChild(div)
+            setTimeout(() => {
+                div.classList.add('opcty')
+            }, 3000)
+        }else{
+            postData(url, newuser).then(res => {
+                console.log(res);
+               
+                if (res.status == 404) {
     
+                    p.innerHTML = "404 - Not Found(URL Mistake)"
+                    div.classList.add('msg', 'w3-right', 'w3-animate-right')
+                    div.appendChild(p)
+                    document.body.appendChild(div)
+                    setTimeout(() => {
+                        div.classList.add('opcty')
+                    }, 3000)
+                } else if (res.status == 201) {
+                        console.log(res,"hello");
+                    cleartextfileds()
+                    p.innerHTML = "User Created"
+                    div.classList.add('msg', 'w3-right', 'w3-animate-right')
+                    div.appendChild(p)
+                    document.body.appendChild(div)
+                    setTimeout(() => {
+                        div.classList.add('opcty')
+                    }, 3000)
+    
+                }
+            }).catch(error => {
+                console.log(error);
+            })
+        }
+       
+    } else {
+        errorMsg.innerHTML = "Password Miss match"
+    }
+
 }
 
 async function postData(url, data) {
-    const response = await fetch(url, {
+    let res
+   await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    });
-    return response;
+    }).then(response => {
+        res=response
+        response.json().then(json => console.log(json))
+    })
+
+    return res
 }
 
-function change(){
-    errorMsg.innerHTML=''
+function change() {
+    errorMsg.innerHTML = ''
 }

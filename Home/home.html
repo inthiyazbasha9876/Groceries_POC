@@ -12,17 +12,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body >
   <div class="row myinfo">
     <a href="home.html"><img class="smalllogo" src="../Images/logo/logo.png"></a>
     <div class="ml-auto my-auto">
      <a href="../cart/cart.html"><i class="fa fa-shopping-cart mr-2"></i></a> 
       <button class="btn tbtn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
-        User Name
+       <label id="name"></label>
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">SignOut</a>
+        <a class="dropdown-item cursor" onclick="signout()" >SignOut</a>
       </div>
     </div>
   </div>

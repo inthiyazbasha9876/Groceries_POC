@@ -1,8 +1,10 @@
 const url="http://localhost:5000/cart"
 const cartdetials=document.getElementById('cartdetials')
+const name=document.getElementById('name')
 
 let cartdata
-
+let id
+setuser()
 getCartdata()
 async function getCartdata(){
     await fetch(url)
@@ -18,20 +20,15 @@ async function getCartdata(){
 }
 
 function settingcartdata(){
-    console.log(cartdata);
     let total=0
-    for(let i of cartdata){
+    let founddata=cartdata.filter(a=> Number(a.userid)==id)
+    for(let i of founddata){
         total+=i.havetopay
         let row=document.createElement('tr')
         let itemname=document.createElement('td')
         let itemprice=document.createElement('td')
         let itemquantity=document.createElement('td')
         let havetopay=document.createElement('td')
-
-        let p=document.createElement(div)
-
-        let sub=document.createElement('button')
-        let add=document.createElement('button')
         
         itemname.innerHTML=i.name
         itemprice.innerHTML=i.price
@@ -78,4 +75,15 @@ function settingcartdata(){
     buttonrow.appendChild(check)
 
     cartdetials.appendChild(buttonrow)
+}
+
+
+function setuser(){
+    id=localStorage.getItem('id')
+    name.innerHTML=localStorage.getItem('name')
+}
+
+function signout(){
+    localStorage.removeItem('name')
+    window.location.href="../login/login.html"
 }

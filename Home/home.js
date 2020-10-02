@@ -10,14 +10,16 @@ const vegdiv = document.getElementById('vegdiv')
 const meatdiv = document.getElementById('meatdiv')
 const modalbody = document.getElementById('modalbody')
 const modalfooter = document.getElementById('modalfooter')
-const modal=document.getElementById('exampleModalCenter')
+const modal = document.getElementById('exampleModalCenter')
+const name = document.getElementById('name')
 
 let removeableDiv = ''
 let removeablebtn = ''
 let fruitsdata
 let vegdata
 let meatdata
-
+let uid
+setuser()
 getFruitsData()
 getVegData()
 getmeatData()
@@ -213,14 +215,14 @@ function getdetails(e) {
 
     let dec = document.createElement('button')
     dec.innerHTML = "-"
-    dec.classList.add('btn','cbtn','btn-sm')
+    dec.classList.add('btn', 'cbtn', 'btn-sm')
     dec.addEventListener('click', () => {
         sub(e)
     })
 
     let inc = document.createElement('button')
     inc.innerHTML = "+"
-    inc.classList.add('btn','cbtn','btn-sm')
+    inc.classList.add('btn', 'cbtn', 'btn-sm')
     inc.addEventListener('click', () => {
         add(e)
     })
@@ -241,7 +243,7 @@ function getdetails(e) {
     let button = document.createElement('button')
     button.id = removeablebtn
     button.innerHTML = "Add To Cart"
-    button.classList.add('btn','cbtn')
+    button.classList.add('btn', 'cbtn')
     button.addEventListener('click', () => {
         let res = addtocart(e)
         res.then(res => {
@@ -249,7 +251,7 @@ function getdetails(e) {
             let div = document.createElement('div')
             let p = document.createElement('p')
             if (res.status == 201) {
-            
+
                 p.innerHTML = "Item added to cart"
                 div.classList.add('msg', 'w3-right', 'w3-animate-right')
                 div.appendChild(p)
@@ -257,7 +259,7 @@ function getdetails(e) {
                 setTimeout(() => {
                     div.classList.add('opcty')
                 }, 3000)
-            }else{
+            } else {
                 p.innerHTML = "Item Already avaialbe in cart"
                 div.classList.add('msg', 'w3-right', 'w3-animate-right')
                 div.appendChild(p)
@@ -273,6 +275,7 @@ function getdetails(e) {
 }
 
 async function addtocart(e) {
+    e.userid = uid
     const response = await fetch(carturl, {
         method: 'POST',
         headers: {
@@ -305,4 +308,15 @@ function removedata(e, f) {
         removediv.remove()
         removedbtn.remove()
     }
+}
+
+
+function setuser() {
+    name.innerHTML = localStorage.getItem('name')
+    uid = localStorage.getItem('id')
+}
+
+function signout() {
+    localStorage.removeItem('name')
+    window.location.href = "../login/login.html"
 }
