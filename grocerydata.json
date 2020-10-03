@@ -3,16 +3,16 @@
     {
       "name" : "Apple",
       "image" : "../Images/apples.jpg",
-      "price" : 35,
-      "havetopay" : 35,
+      "price" : 120,
+      "havetopay" : 120,
       "itemid":"F1",
       "quantity":1
     },
     {
       "name" : "Banana",
       "image" : "../Images/banana.jpg",
-      "price" : 12,
-      "havetopay" : 12,
+      "price" : 35,
+      "havetopay" : 35,
       "itemid":"F2",
       "quantity":1
     },
@@ -61,8 +61,8 @@
     {
       "name" : "Califlower",
       "image" : "../Images/califlower.jpg",
-      "price" : 20,
-      "havetopay" : 20,
+      "price" : 50,
+      "havetopay" : 50,
       "itemid":"V4",
       "quantity":1
     },

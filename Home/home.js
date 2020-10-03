@@ -12,6 +12,8 @@ const modalbody = document.getElementById('modalbody')
 const modalfooter = document.getElementById('modalfooter')
 const modal = document.getElementById('exampleModalCenter')
 const userName = document.getElementById('name')
+const popupDiv = document.createElement('div')
+const popupPara = document.createElement('p')
 
 let removeableDiv = ''
 let removeablebtn = ''
@@ -20,17 +22,19 @@ let vegdata
 let meatdata
 let uid
 
+clearhistory()
 setuser()
 getFruitsData()
 getVegData()
 getmeatData()
-clearhistory()
+
+function preventBack() {
+    window.history.forward();
+}
 
 function clearhistory() {
-    window.history.pushState(null, "", window.location.href);
-    window.onpopstate = function () {
-        window.history.pushState(null, "", window.location.href);
-    };
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
 }
 
 async function getFruitsData() {
@@ -75,7 +79,7 @@ async function getmeatData() {
 function settingFruitsValues() {
     console.log(fruitsdata);
     for (let i of fruitsdata) {
-        let li = document.createElement('li')
+        const li = document.createElement('li')
         li.innerHTML = i.name
         li.setAttribute('data-toggle', "modal")
         li.setAttribute("data-target", "#exampleModalCenter")
@@ -84,13 +88,13 @@ function settingFruitsValues() {
         })
         fruitsList.appendChild(li)
 
-        let div = document.createElement('div')
+        const div = document.createElement('div')
         div.classList.add('listdiv')
 
-        let img = document.createElement('IMG')
+        const img = document.createElement('IMG')
         img.setAttribute('src', i.image)
         img.classList.add('image')
-        let name = document.createElement('p')
+        const name = document.createElement('p')
         name.innerHTML = i.name
         name.setAttribute('data-toggle', "modal")
         name.setAttribute("data-target", "#exampleModalCenter")
@@ -98,7 +102,7 @@ function settingFruitsValues() {
         name.addEventListener('click', () => {
             getdetails(i)
         })
-        let price = document.createElement('p')
+        const price = document.createElement('p')
         price.innerHTML = "Price : " + i.price
         price.classList.add('centerdata')
 
@@ -113,7 +117,7 @@ function settingFruitsValues() {
 function settingVegValues() {
     console.log(vegdata);
     for (let i of vegdata) {
-        let li = document.createElement('li')
+        const li = document.createElement('li')
         li.innerHTML = i.name
         li.setAttribute('data-toggle', "modal")
         li.setAttribute("data-target", "#exampleModalCenter")
@@ -126,13 +130,13 @@ function settingVegValues() {
         vegList.appendChild(li)
 
 
-        let div = document.createElement('div')
+        const div = document.createElement('div')
         div.classList.add('listdiv')
 
-        let img = document.createElement('IMG')
+        const img = document.createElement('IMG')
         img.setAttribute('src', i.image)
         img.classList.add('image')
-        let name = document.createElement('p')
+        const name = document.createElement('p')
         name.innerHTML = i.name
         name.classList.add('centerdata')
         name.setAttribute('data-toggle', "modal")
@@ -141,7 +145,7 @@ function settingVegValues() {
         name.addEventListener('click', () => {
             getdetails(i)
         })
-        let price = document.createElement('p')
+        const price = document.createElement('p')
         price.innerHTML = "Price : " + i.price
         price.classList.add('centerdata')
 
@@ -157,7 +161,7 @@ function settingVegValues() {
 function settingmeatvalues() {
     console.log(meatdata);
     for (let i of meatdata) {
-        let li = document.createElement('li')
+        const li = document.createElement('li')
         li.innerHTML = i.name
         li.setAttribute('data-toggle', "modal")
         li.setAttribute("data-target", "#exampleModalCenter")
@@ -167,7 +171,7 @@ function settingmeatvalues() {
         meatList.appendChild(li)
 
 
-        let div = document.createElement('div')
+        const div = document.createElement('div')
         div.classList.add('listdiv')
 
         let img = document.createElement('IMG')
@@ -198,44 +202,44 @@ function settingmeatvalues() {
 
 function getdetails(e) {
     removedata(removeableDiv, removeablebtn)
-    let div = document.createElement('div')
+    const div = document.createElement('div')
     removeableDiv = "romovediv"
     removeablebtn = "romovebtn"
     div.id = removeableDiv
-    let details = document.createElement('div')
+    const details = document.createElement('div')
     div.classList.add('row')
-    let img = document.createElement('IMG')
+    const img = document.createElement('IMG')
     img.setAttribute('src', e.image)
     img.classList.add('modalimage')
 
 
 
-    let name = document.createElement('p')
+    const name = document.createElement('p')
     name.innerHTML = "Product Name : " + e.name
 
-    let price = document.createElement('p')
+    const price = document.createElement('p')
     price.innerHTML = "Product price : " + e.havetopay
 
-    let quantity = document.createElement('p')
+    const quantity = document.createElement('p')
     quantity.innerHTML = "Product quantity In Kgs: "
 
-    let value = document.createElement('p')
+    const value = document.createElement('p')
     value.innerHTML = " " + e.quantity + " "
 
-    let dec = document.createElement('button')
+    const dec = document.createElement('button')
     dec.innerHTML = "-"
     dec.classList.add('btn', 'cbtn', 'btn-sm')
     dec.addEventListener('click', () => {
         sub(e)
     })
 
-    let inc = document.createElement('button')
+    const inc = document.createElement('button')
     inc.innerHTML = "+"
     inc.classList.add('btn', 'cbtn', 'btn-sm')
     inc.addEventListener('click', () => {
         add(e)
     })
-    let p = document.createElement('div')
+    const p = document.createElement('div')
     p.classList.add('row')
     p.appendChild(dec)
     p.appendChild(value)
@@ -249,31 +253,30 @@ function getdetails(e) {
     div.appendChild(details)
     modalbody.appendChild(div)
 
-    let button = document.createElement('button')
+    const button = document.createElement('button')
     button.id = removeablebtn
     button.innerHTML = "Add To Cart"
     button.classList.add('btn', 'cbtn')
     button.addEventListener('click', () => {
         let res = addtocart(e)
-        res.then(res => {
-            console.log("after add", res.status);
-            let div = document.createElement('div')
-            let p = document.createElement('p')
+        res.then(response => {
+            console.log("after add", response.status);
+
             if (res.status == 201) {
-                p.innerHTML = "Item added to cart"
-                div.classList.add('msg', 'w3-right', 'w3-animate-right')
-                div.appendChild(p)
-                modal.appendChild(div)
+                popupPara.innerHTML = "Item added to cart"
+                popupDiv.classList.add('msg', 'w3-right', 'w3-animate-right')
+                popupDiv.appendChild(popupPara)
+                modal.appendChild(popupDiv)
                 setTimeout(() => {
-                    div.classList.add('opcty')
+                    popupDiv.classList.add('opcty')
                 }, 3000)
             } else {
-                p.innerHTML = "Item Already avaialbe in cart"
-                div.classList.add('msg', 'w3-right', 'w3-animate-right')
-                div.appendChild(p)
-                modal.appendChild(div)
+                popupPara.innerHTML = "Item Already avaialbe in cart"
+                popupDiv.classList.add('msg', 'w3-right', 'w3-animate-right')
+                popupDiv.appendChild(popupPara)
+                modal.appendChild(popupDiv)
                 setTimeout(() => {
-                    div.classList.add('opcty')
+                    popupDiv.classList.add('opcty')
                 }, 3000)
             }
         })

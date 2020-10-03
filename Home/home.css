@@ -33,7 +33,7 @@
 }
 
 .image{
-    height: 300px !important;
+    height: 300px;
 }
 
 @media (max-width: 767px) {

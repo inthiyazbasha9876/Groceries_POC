@@ -1,20 +1,12 @@
 {
   "userDetails": [
     {
-      "fullname": "sdfsd",
-      "moblie": "sdfds",
-      "username": "dfd",
-      "password": "1",
-      "confirmPswd": "1",
+      "fullname": "Inthiyaz Basha S",
+      "moblie": "9949960894",
+      "username": "inthiyazbasha@gmail.com",
+      "password": "12345678",
+      "confirmPswd": "12345678",
       "id": 1
-    },
-    {
-      "fullname": "sd",
-      "moblie": "sd",
-      "username": "df",
-      "password": "1",
-      "confirmPswd": "1",
-      "id": 2
     }
   ]
 }

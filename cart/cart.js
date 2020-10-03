@@ -1,7 +1,7 @@
 const url = "http://localhost:5000/cart/"
 const name = document.getElementById('name')
 const totalprice = document.getElementById('totalprice')
-let cartdetails = document.getElementById('cartdetails')
+const cartdetails = document.getElementById('cartdetails')
 
 let removalid = ''
 let cartdata
@@ -27,15 +27,15 @@ async function getCartdata() {
 function settingcartdata(data) {
     removeold(data)
     for (let i of data) {
-        let row = document.createElement('div')
+        const row = document.createElement('div')
         removalid = i.id
         row.id = i.id
         row.classList.add('row','borderclass','mb-2')
-        let itemname = document.createElement('p')
-        let itemprice = document.createElement('p')
-        let itemquantity = document.createElement('p')
-        let havetopay = document.createElement('p');
-        let icon = document.createElement('i')
+        const itemname = document.createElement('p')
+        const itemprice = document.createElement('p')
+        const itemquantity = document.createElement('p')
+        const havetopay = document.createElement('p');
+        const icon = document.createElement('i')
 
         itemname.classList.add('col-2')
         itemprice.classList.add('col-2')

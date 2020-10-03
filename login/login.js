@@ -11,13 +11,13 @@ const password = document.getElementById('password')
 const cpassword = document.getElementById('cpassword')
 const errorMsg = document.getElementById('errorMsg')
 const label = document.getElementById('label')
-const url = "http://localhost:3000/userDetails"
 
+const div = document.createElement('div')
+const p = document.createElement('p')
 
 let userdata
 
 login_display()
-getAllusers()
 
 function register_display() {
     getAllusers()
@@ -50,9 +50,8 @@ function cleartextfileds() {
     fullname.value = ''
     mobile.value = ''
 }
-
 async function getAllusers() {
-    await fetch(url)
+    await services.getAll()
         .then(res => {
             res.json().then(data => {
                 userdata = data
@@ -64,19 +63,17 @@ async function getAllusers() {
 }
 
 function loginClick() {
-    let uname = username.value
-    let passwrd = password.value
-    let div = document.createElement('div')
-    let p = document.createElement('p')
-
+    console.log(userdata);
+    const uname = username.value
+    const passwrd = password.value
     if (userdata.length != 0) {
         for (let i of userdata) {
             if (i.username == uname && i.password == passwrd) {
                 console.log("login");
                 localStorage.setItem('name', i.fullname)
                 localStorage.setItem('id', i.id)
-                // window.location.href = "../Home/home.html"
-                window.location.replace('../Home/home.html');
+                window.location.href = "../Home/home.html"
+                window.location.replace('../Home/home.html')
             } else {
                 p.innerHTML = "User Name or password is wrong"
                 div.classList.add('msg', 'w3-right', 'w3-animate-right')
@@ -99,9 +96,8 @@ function loginClick() {
 
 }
 
-function registerClick() {
-    let div = document.createElement('div')
-    let p = document.createElement('p')
+async function registerClick() {
+
     let newuser = {
         'fullname': fullname.value,
         'moblie': mobile.value,
@@ -120,11 +116,8 @@ function registerClick() {
                 div.classList.add('opcty')
             }, 3000)
         } else {
-            postData(url, newuser).then(res => {
-                console.log(res);
-
+           await services.postData(newuser).then(res => {
                 if (res.status == 404) {
-
                     p.innerHTML = "404 - Not Found(URL Mistake)"
                     div.classList.add('msg', 'w3-right', 'w3-animate-right')
                     div.appendChild(p)
@@ -155,21 +148,6 @@ function registerClick() {
 
 }
 
-async function postData(url, data) {
-    let res
-    await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    }).then(response => {
-        res = response
-        response.json().then(json => console.log(json))
-    })
-
-    return res
-}
 
 function change() {
     errorMsg.innerHTML = ''
