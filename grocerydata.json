@@ -31,6 +31,30 @@
       "havetopay":200,
       "itemid":"F4",
       "quantity":1
+    },
+    {
+      "name" : "Guava",
+      "image" : "../Images/guava.jpg",
+      "price" : 50,
+      "havetopay":50,
+      "itemid":"F5",
+      "quantity":1
+    },
+    {
+      "name" : "Papaya",
+      "image" : "../Images/papaya.jpg",
+      "price" : 75,
+      "havetopay":75,
+      "itemid":"F6",
+      "quantity":1
+    },
+    {
+      "name" : "Watermelon",
+      "image" : "../Images/watermelon.jpg",
+      "price" : 80,
+      "havetopay":80,
+      "itemid":"F7",
+      "quantity":1
     }
   ],
   "veggie" : [
@@ -73,6 +97,38 @@
       "havetopay" : 50,
       "itemid":"V5",
       "quantity":1
+    },
+    {
+      "name" : "Green Beans",
+      "image" : "../Images/beans.jpg",
+      "price" : 25,
+      "havetopay" : 25,
+      "itemid":"V6",
+      "quantity":1
+    },
+    {
+      "name" : "Green Chilli",
+      "image" : "../Images/greenchilli.jpg",
+      "price" : 35,
+      "havetopay" : 35,
+      "itemid":"V7",
+      "quantity":1
+    },
+    {
+      "name" : "Ladys Finger",
+      "image" : "../Images/ladysfinger.jpg",
+      "price" : 20,
+      "havetopay" : 20,
+      "itemid":"V8",
+      "quantity":1
+    },
+    {
+      "name" : "Brinjal",
+      "image" : "../Images/brinjal.jpg",
+      "price" : 50,
+      "havetopay" : 50,
+      "itemid":"V5",
+      "quantity":1
     }
   ],
   "meat":[
@@ -80,7 +136,7 @@
       "name" : "Chicken",
       "image" : "../Images/meat.jpg",
       "price" : 230,
-      "havetopay" : 50,
+      "havetopay" : 230,
       "itemid":"M1",
       "quantity":1
     },
@@ -88,7 +144,7 @@
       "name" : "Fish",
       "image" : "../Images/fish.jpg",
       "price" : 300,
-      "havetopay" : 50,
+      "havetopay" : 300,
       "itemid":"M2",
       "quantity":1
     },
@@ -96,7 +152,7 @@
       "name" : "Prawns",
       "image" : "../Images/prawns.jpg",
       "price" : 250,
-      "havetopay" : 50,
+      "havetopay" : 250,
       "itemid":"M3",
       "quantity":1
     },
@@ -104,8 +160,32 @@
       "name" : "Mutton",
       "image" : "../Images/meat.jpg",
       "price" : 500,
-      "havetopay" : 50,
+      "havetopay" : 500,
       "itemid":"M4",
+      "quantity":1
+    },
+    {
+      "name" : "Pork",
+      "image" : "../Images/pork.jpg",
+      "price" : 350,
+      "havetopay" : 350,
+      "itemid":"M5",
+      "quantity":1
+    },
+    {
+      "name" : "Beef",
+      "image" : "../Images/beef.jpg",
+      "price" : 750,
+      "havetopay" : 750,
+      "itemid":"M6",
+      "quantity":1
+    },
+    {
+      "name" : "Liver",
+      "image" : "../Images/liver.jpg",
+      "price" : 350,
+      "havetopay" : 350,
+      "itemid":"M7",
       "quantity":1
     }
   ]

@@ -69,6 +69,7 @@
     border-radius: 50%;
     margin: 15px;
 }
+
 .fruits >li,.veg >li, .meat>li{
     margin: 8px !important;
     padding: 5px !important;
@@ -76,15 +77,20 @@
 
 .scrolldiv{
     padding: 10px 60px !important;
-    width: 100% !important;
-    overflow-x: auto !important;
+    width: 100% ;
+    /* overflow-x: auto !important; */
+   
+}
+.scroll{
+    overflow: auto;
+}
+.scroll>.row{
+    display: -webkit-inline-box;
+    flex-wrap: nowrap;
 }
   
-
 .listdiv{
-    height: 250px !important;
     width: 250px !important;
-    margin: 20px !important;
     padding: 10px;
 }
 

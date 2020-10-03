@@ -19,6 +19,56 @@
       "quantity": 1,
       "userid": "1",
       "id": 2
+    },
+    {
+      "name": "Papaya",
+      "image": "../Images/papaya.jpg",
+      "price": 75,
+      "havetopay": 75,
+      "itemid": "F6",
+      "quantity": 1,
+      "userid": "1",
+      "id": 3
+    },
+    {
+      "name": "Pork",
+      "image": "../Images/pork.jpg",
+      "price": 350,
+      "havetopay": 350,
+      "itemid": "M5",
+      "quantity": 1,
+      "userid": "1",
+      "id": 4
+    },
+    {
+      "name": "Beef",
+      "image": "../Images/beef.jpg",
+      "price": 750,
+      "havetopay": 750,
+      "itemid": "M6",
+      "quantity": 1,
+      "userid": "1",
+      "id": 5
+    },
+    {
+      "name": "Green Chilli",
+      "image": "../Images/greenchilli.jpg",
+      "price": 35,
+      "havetopay": 35,
+      "itemid": "V7",
+      "quantity": 1,
+      "userid": "1",
+      "id": 6
+    },
+    {
+      "name": "Carrot",
+      "image": "../Images/carrots.jpg",
+      "price": 50,
+      "havetopay": 50,
+      "itemid": "V5",
+      "quantity": 1,
+      "userid": "1",
+      "id": 7
     }
   ]
 }

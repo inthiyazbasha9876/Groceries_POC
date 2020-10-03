@@ -271,7 +271,7 @@ function getdetails(e) {
                     popupDiv.classList.add('opcty')
                 }, 3000)
             } else {
-                popupPara.innerHTML = "Item Already avaialbe in cart"
+                popupPara.innerHTML = "Item added to cart"
                 popupDiv.classList.add('msg', 'w3-right', 'w3-animate-right')
                 popupDiv.appendChild(popupPara)
                 modal.appendChild(popupDiv)

@@ -7,6 +7,14 @@
       "password": "12345678",
       "confirmPswd": "12345678",
       "id": 1
+    },
+    {
+      "fullname": "Sundeep K",
+      "moblie": "9689654231",
+      "username": "sundeep@gmail.com",
+      "password": "12345678",
+      "confirmPswd": "12345678",
+      "id": 2
     }
   ]
 }
