@@ -73,13 +73,6 @@ class Cart {
         name.innerHTML = localStorage.getItem('name')
     }
 
-    signout() {
-        localStorage.removeItem('name')
-        localStorage.removeItem('id')
-        window.location.href = "../login/login.html"
-    }
-
-
     async deleteitem(itemid) {
         await fetch(url + itemid, {
             method: 'DELETE'
@@ -114,4 +107,10 @@ class Cart {
 
 }
 
-let cart=new Cart()
+let cart = new Cart()
+
+function signout() {
+    localStorage.removeItem('name')
+    localStorage.removeItem('id')
+    window.location.href = "../login/login.html"
+}
