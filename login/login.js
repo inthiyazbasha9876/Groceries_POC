@@ -72,7 +72,7 @@ function loginClick() {
                 console.log("login");
                 localStorage.setItem('name', i.fullname)
                 localStorage.setItem('id', i.id)
-                window.location.href = "../Home/home.html"
+                // window.location.href = "../Home/home.html"
                 window.location.replace('../Home/home.html')
             } else {
                 p.innerHTML = "User Name or password is wrong"
@@ -81,7 +81,7 @@ function loginClick() {
                 document.body.appendChild(div)
                 setTimeout(() => {
                     div.classList.add('opcty')
-                }, 3000)
+                }, 1000)
             }
         }
     } else {
@@ -91,7 +91,7 @@ function loginClick() {
         document.body.appendChild(div)
         setTimeout(() => {
             div.classList.add('opcty')
-        }, 3000)
+        }, 1000)
     }
 
 }

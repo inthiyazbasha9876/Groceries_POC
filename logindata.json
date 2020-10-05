@@ -15,6 +15,14 @@
       "password": "12345678",
       "confirmPswd": "12345678",
       "id": 2
+    },
+    {
+      "fullname": "sandeep",
+      "moblie": "8712258200",
+      "username": "sandy@gmail.com",
+      "password": "1234567",
+      "confirmPswd": "1234567",
+      "id": 3
     }
   ]
 }

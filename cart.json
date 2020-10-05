@@ -69,6 +69,16 @@
       "quantity": 1,
       "userid": "1",
       "id": 7
+    },
+    {
+      "name": "Chicken",
+      "image": "../Images/meat.jpg",
+      "price": 230,
+      "havetopay": 230,
+      "itemid": "M1",
+      "quantity": 1,
+      "userid": "3",
+      "id": 8
     }
   ]
 }

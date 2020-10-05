@@ -12,8 +12,6 @@ const modalbody = document.getElementById('modalbody')
 const modalfooter = document.getElementById('modalfooter')
 const modal = document.getElementById('exampleModalCenter')
 const userName = document.getElementById('name')
-const popupDiv = document.createElement('div')
-const popupPara = document.createElement('p')
 
 let removeableDiv = ''
 let removeablebtn = ''
@@ -201,6 +199,9 @@ function settingmeatvalues() {
 
 
 function getdetails(e) {
+    const popupDiv = document.createElement('div')
+    const popupPara = document.createElement('p')
+
     removedata(removeableDiv, removeablebtn)
     const div = document.createElement('div')
     removeableDiv = "romovediv"
@@ -261,24 +262,13 @@ function getdetails(e) {
         let res = addtocart(e)
         res.then(response => {
             console.log("after add", response.status);
-
-            if (res.status == 201) {
-                popupPara.innerHTML = "Item added to cart"
-                popupDiv.classList.add('msg', 'w3-right', 'w3-animate-right')
-                popupDiv.appendChild(popupPara)
-                modal.appendChild(popupDiv)
-                setTimeout(() => {
-                    popupDiv.classList.add('opcty')
-                }, 3000)
-            } else {
-                popupPara.innerHTML = "Item added to cart"
-                popupDiv.classList.add('msg', 'w3-right', 'w3-animate-right')
-                popupDiv.appendChild(popupPara)
-                modal.appendChild(popupDiv)
-                setTimeout(() => {
-                    popupDiv.classList.add('opcty')
-                }, 3000)
-            }
+            popupPara.innerHTML = "Item added to cart"
+            popupDiv.classList.add('msg', 'w3-right', 'w3-animate-right')
+            popupDiv.appendChild(popupPara)
+            modal.appendChild(popupDiv)
+            setTimeout(() => {
+                popupDiv.classList.add('opcty')
+            }, 1000)
         })
     })
 
@@ -286,15 +276,29 @@ function getdetails(e) {
 }
 
 async function addtocart(e) {
-    e.userid = uid
-    const response = await fetch(carturl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(e)
-    });
-    return response;
+    const popupDiv = document.createElement('div')
+    const popupPara = document.createElement('p')
+
+    if (uid != null) {
+        e.userid = uid
+        const response = await fetch(carturl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(e)
+        });
+        return response;
+    } else {
+        popupPara.innerHTML = "your are not authorized"
+        popupDiv.classList.add('msg', 'w3-right', 'w3-animate-right')
+        popupDiv.appendChild(popupPara)
+        modal.appendChild(popupDiv)
+        setTimeout(() => {
+            popupDiv.classList.add('opcty')
+        }, 1000)
+    }
+
 }
 
 function add(e) {
